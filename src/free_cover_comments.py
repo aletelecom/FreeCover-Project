@@ -3,7 +3,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 
-DEVELOPER_KEY = 'AIzaSyDX0q9GzyqrQbbxbxfvnPwjshP2AOuSdNY'
+DEVELOPER_KEY = '[DEVELOPER_KEY]
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 MAX_RESULTS = 100 # Maximum number of comments to retrieve per video
