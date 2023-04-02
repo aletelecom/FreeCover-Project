@@ -1,6 +1,8 @@
 # Free Cover Project
 
+
 ![Wordcloud de todos los comentarios](Imagenes/Free_Cover_Wordcloud.png)
+
 
 Este repositorio contiene un Jupyter Notebook que se enfoca en el análisis de los comentarios de los videos del canal "Free Cover" en YouTube.
 
@@ -17,7 +19,7 @@ Para este proyecto, se utilizaron las siguientes librerías de Python:
 
 ## Los datos
 
-Los datos utilizados en el proyecto son los comentarios publicados en los videos del canal de Youtube de __Free Cover__, los cuales fueron extraidos utilizando la API de Google para este propósito.
+Los datos utilizados en el proyecto son los comentarios publicados por las personas en los videos del canal de Youtube de __Free Cover__, los cuales fueron extraidos utilizando la API de Google para este propósito.
 
 Son poco más de 70 mil comentarios sin filtrar los que fueron extraídos, y los que utilizaremos.
 
@@ -25,22 +27,19 @@ Son poco más de 70 mil comentarios sin filtrar los que fueron extraídos, y los
 
 El proyecto consiste en un Jupyter Notebook que contiene varias visualizaciones de los comentarios de los videos del canal "Free Cover" en YouTube. A continuación, se muestra un ejemplo de una de las visualizaciones:
 
+
 ![Mapa de calor de los comentarios por fecha y hora del día](Imagenes/Mapa_Calor_Comentarios.png)
 
 
 Esta visualización muestra un mapa de calor que representa la cantidad de comentarios que se recibieron por fecha y hora del día. El eje horizontal representa las horas del día, mientras que el eje vertical representa las fechas. Los colores más oscuros indican una mayor cantidad de comentarios.
-Conclusiones
+
+## Conclusiones
 
 En el proyecto se pudieron obtener algunas conclusiones interesantes sobre los comentarios de los videos del canal "Free Cover". Se encontró que los días de la semana con mayor cantidad de comentarios son los fines de semana, y que los horarios con mayor cantidad de comentarios son a partir de las 11:00 pm.
 
 ## Archivos con comentarios
 
 Para una reproducción de los resultados más rápida, he dejado una carpeta con los archivos MS Excel que contienen los datos utilizados en este proyecto.
-
-
-## Contribuciones
-
-Si deseas contribuir con este proyecto, puedes hacerlo abriendo un "pull request" en este repositorio. Cualquier aporte es bienvenido.
 
 
 ## ¿Quienes son Free Cover?
