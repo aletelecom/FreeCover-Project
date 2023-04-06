@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
@@ -101,9 +102,13 @@ def __main__():
 	CHANNEL_ID = 'UCnntVqOb0AOzjDE13PjHeRw'
 	comments_df = get_all_video_comments(CHANNEL_ID)
 	
-	print('Guardando datos...')
+	comentarios_path = os.path.join('..','Comentarios')
 	file_name = 'Comentarios-FreeCover(v2).xlsx'
-	comments_df.to_excel(file_name)
+	file_path = os.path.join(comentarios_path, file_name)
+	
+	print('Guardando datos...')
+	
+	comments_df.to_excel(file_path)
 	print('Proceso finalizado con exito.')
 
 
