@@ -12,16 +12,24 @@ El objetivo de este proyecto es analizar los comentarios de los videos del canal
 
 Para este proyecto, se utilizaron las siguientes librerías de Python:
 
-    Pandas: para el manejo y análisis de datos.
-    Matplotlib: para la creación de gráficas y visualizaciones.
-    Seaborn: para mejorar la estética de las gráficas y visualizaciones.
-    Google API: para extraer los comentarios de los videos de YouTube.
+   * Pandas: para el manejo y análisis de datos.
+   * Matplotlib: para la creación de gráficas y visualizaciones.
+   * Seaborn: para mejorar la estética de las gráficas y visualizaciones.
+   * Google API: para extraer los comentarios de los videos de YouTube.
 
 ## Los datos
 
 Los datos utilizados en el proyecto son los comentarios publicados por las personas en los videos del canal de Youtube de __Free Cover__, los cuales fueron extraidos utilizando la API de Google para este propósito.
 
 Son poco más de 70 mil comentarios sin filtrar los que fueron extraídos, y los que utilizaremos.
+
+Para utilizar el script de extracción de los comentarios simplemente se ejecuta el archivo:
+
+    free_cover_comments.py
+
+Lo único que hay que tener en cuenta es que se debe tener una cuenta en la API de Google, y contar con sus credenciales. Puedes obtener ayuda de como obtenerla con el siguiente enlace:
+
+[Página de solicitud credenciales de Google](https://developers.google.com/youtube/registering_an_application?hl=es)
 
 ## Contenido del proyecto
 
