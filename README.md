@@ -43,9 +43,9 @@ Esta visualización muestra un mapa de calor que representa la cantidad de comen
 
 ## Proceso de Fine-Tuning
 
-Al interactuar con los datos obtenidos, y pasarlos por un analisis de sentimientos utilizando un modelo pre-entrenado para ello, vimos que muchos comentarios con modismos "marabinos" eran clasificados como negativos, cuando claramente tenían como objetivo elogiar el contenido, por lo que decidí realizar una pequeña rutina de sintonía fina al modelo. Para más detalles sobre este procedimiento puedes consultar los notebooks. 
+Al interactuar con los datos obtenidos, y pasarlos por un análisis de sentimientos utilizando un modelo preentrenado para ello, vimos que muchos comentarios con modismos "marabinos" eran clasificados como negativos, cuando claramente tenían como objetivo elogiar el contenido, por lo que decidí realizar una pequeña rutina de sintonía fina al modelo. Para más detalles sobre este procedimiento puedes consultar los notebooks. 
 
-El proceso de fine-tuning implica ajustar un modelo preentrenado utilizando datos específicos de la tarea que se desea abordar. En este repositorio, se utiliza un enfoque basado en las valiosas herramientas de  🤗HuggingFace🤗, que aprovecha la arquitectura de "transformers" y las capacidades de transferencia de aprendizaje de dichos modelos.
+El proceso de fine-tuning implica ajustar un modelo preentrenado utilizando datos específicos de la tarea que se desea abordar. En este repositorio, se utiliza un enfoque basado en las valiosas herramientas de 🤗HuggingFace🤗, que aprovecha la arquitectura de "transformers" y las capacidades de transferencia de aprendizaje de dichos modelos.
 
 
 ## Uso de Colab para aprovechar el GPU
