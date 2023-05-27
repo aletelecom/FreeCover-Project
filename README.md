@@ -43,23 +43,14 @@ Esta visualización muestra un mapa de calor que representa la cantidad de comen
 
 ## Proceso de Fine-Tuning
 
-El proceso de fine-tuning implica ajustar un modelo preentrenado utilizando datos específicos de la tarea que se desea abordar. En este repositorio, se utiliza un enfoque basado en Hugging Face, que aprovecha la arquitectura de transformer y las capacidades de transferencia de aprendizaje.
+Al interactuar con los datos obtenidos, y pasarlos por un analisis de sentimientos utilizando un modelo pre-entrenado para ello, vimos que muchos comentarios con modismos "marabinos" eran clasificados como negativos, cuando claramente tenían como objetivo elogiar el contenido, por lo que decidí realizar una pequeña rutina de sintonía fina al modelo. Para más detalles sobre este procedimiento puedes consultar los notebooks. 
 
-El proceso de fine-tuning consta de los siguientes pasos principales:
+El proceso de fine-tuning implica ajustar un modelo preentrenado utilizando datos específicos de la tarea que se desea abordar. En este repositorio, se utiliza un enfoque basado en las valiosas herramientas de  🤗HuggingFace🤗, que aprovecha la arquitectura de "transformers" y las capacidades de transferencia de aprendizaje de dichos modelos.
 
-    Preparación de los datos: Se requiere un conjunto de datos etiquetado para la tarea objetivo. Los datos se deben dividir en conjuntos de entrenamiento, validación y prueba. Además, se utiliza la biblioteca Hugging Face para crear objetos Dataset optimizados para el procesamiento de lenguaje natural.
-
-    Configuración del modelo preentrenado: Se carga un modelo preentrenado de Hugging Face y se ajusta para adaptarlo a la tarea específica. En esta etapa, se pueden realizar modificaciones en la arquitectura del modelo o ajustar los hiperparámetros según sea necesario.
-
-    Entrenamiento del modelo: El modelo se entrena utilizando el conjunto de datos de entrenamiento. Durante el entrenamiento, se utilizan técnicas como la retroalimentación del error y la optimización de los pesos para ajustar los parámetros del modelo y mejorar su desempeño en la tarea específica.
-
-    Evaluación del modelo: Una vez entrenado, el modelo se evalúa utilizando el conjunto de datos de prueba. Se calculan métricas de rendimiento, como la precisión o el valor F1, para medir la calidad de las predicciones del modelo.
-
-    Uso del modelo fine-tuned: Una vez que el modelo ha sido fine-tuned, se puede utilizar para realizar predicciones en nuevos datos. Esto puede involucrar tareas como la clasificación de sentimientos en texto o la generación de texto autónoma.
 
 ## Uso de Colab para aprovechar el GPU
 
-Este repositorio incluye un notebook de Colab que aprovecha el entorno de ejecución en la nube de Google Colab, el cual ofrece acceso a GPU de forma gratuita. Utilizar GPU acelera significativamente el proceso de entrenamiento, especialmente en conjuntos de datos grandes y modelos complejos.
+Este repositorio incluye un notebook de Colab que aprovecha el entorno de ejecución en la nube de Google Colab, el cual ofrece acceso a GPU de forma gratuita. Utilizar GPU acelera significativamente el proceso de "fine-tuning", especialmente en conjuntos de datos grandes y modelos complejos.
 
 
 ## Conclusiones
