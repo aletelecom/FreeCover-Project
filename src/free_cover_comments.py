@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 
-DEVELOPER_KEY = '[DEVELOPER_KEY]' # Aquí deben colocar la clave de desarrollador de la API de Google
+DEVELOPER_KEY = '[GOOGLE API TOKEN]' # Aquí deben colocar la clave de desarrollador de la API de Google
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 MAX_RESULTS = 100 # Número máximo de comentarios a recuperar por video
@@ -16,6 +16,8 @@ def obtener_todos_los_comentarios_de_video(id_canal):
     # Recuperar los videos del canal
     videos = []
     next_page_token = None
+
+    print('Se ha comenzado a extraer los comentarios.')
 
     while True:
         videos_request = youtube.search().list(
@@ -38,6 +40,7 @@ def obtener_todos_los_comentarios_de_video(id_canal):
 
     # Recorrer cada video y recuperar sus comentarios
     for video in videos:
+        print(f'Extrayendo comentarios para el video {video}')
         video_id = video['id']['videoId']
         video_request = youtube.videos().list(
             part="snippet",
@@ -69,11 +72,11 @@ def obtener_todos_los_comentarios_de_video(id_canal):
                     # Agregar el comentario a la lista
                     comentarios.append({
                         'video_id': video_id,
-                        'video_titulo': video_titulo,
-                        'video_descripcion': video_descripcion,
-                        'video_fecha': video_fecha,
-                        'texto_comentario': texto_comentario,
-                        'fecha_comentario': fecha_comentario
+                        'video_title': video_titulo,
+                        'video_description': video_descripcion,
+                        'video_date': video_fecha,
+                        'comment_text': texto_comentario,
+                        'comment_date': fecha_comentario
                     })
 
                 # Verificar si hay más comentarios para este video
@@ -101,11 +104,15 @@ def __main__():
     CHANNEL_ID = 'UCnntVqOb0AOzjDE13PjHeRw'
     comentarios_df = obtener_todos_los_comentarios_de_video(CHANNEL_ID)
     
-    comentarios_path = os.path.join('..','Comentarios')
-    file_name = 'Comentarios-FreeCover(v2).xlsx'
+    comentarios_path = os.path.join('Comentarios')
+    file_name = 'Comentarios-FreeCover(date_fixed).xlsx'
     file_path = os.path.join(comentarios_path, file_name)
     
     print('Guardando datos...')
+
+    # Convert 'video_fecha' and 'fecha_comentario' columns to datetime objects
+    comentarios_df['video_date'] = pd.to_datetime(comentarios_df['video_date'])
+    comentarios_df['comment_date'] = pd.to_datetime(comentarios_df['comment_date'])
 
     def remove_timezone(dt):
         """Remove timezone information from a datetime object."""
@@ -114,7 +121,7 @@ def __main__():
         return dt
 
     comentarios_df['video_date'] = comentarios_df['video_date'].apply(remove_timezone)
-    comentarios_df['comment_date'] = comentarios_df['video_date'].apply(remove_timezone)
+    comentarios_df['comment_date'] = comentarios_df['comment_date'].apply(remove_timezone)
     
     comentarios_df.to_excel(file_path)
     print('Proceso finalizado con éxito.')
